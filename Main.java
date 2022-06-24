@@ -1,18 +1,24 @@
+// 2022/06/24
+// SummerWeekendWeatherV3
 // John Jamieson
-// 2022/05/24
+
+// SummerWeekendWeatherV3 is a program for pulling historical weather information from https://api.weather.gc.ca/
 
 package ca.johnjamieson.weather;
 
+// Package imports
 import org.json.*; // https://mvnrepository.com/artifact/org.json/json
 import java.net.*;
 import java.io.*;
 import java.util.*;
 
-record WeatherDay(boolean missed, int year, int month, int day, Number temp, double rain){}
-record WeatherAvg(int month, int day, Number temp, double rain){}
+
 
 public class Main
 {
+    // Records (structures) for holding each day's weather details
+    private record WeatherDay(boolean missed, int year, int month, int day, Number temp, double rain){}
+    private record WeatherAvg(int month, int day, Number temp, double rain){}
     public static void main(String[] args)
     {
         try
